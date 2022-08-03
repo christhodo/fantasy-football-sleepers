@@ -14,7 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@fantasy-football-sleepers/api-interfaces": [
+        "libs/api-interfaces/src/index.ts"
+      ],
+      "@fantasy-football-sleepers/core-data": ["libs/core-data/src/index.ts"],
+      "@fantasy-football-sleepers/core-state": ["libs/core-state/src/index.ts"],
+      "@fantasy-football-sleepers/environment": [
+        "libs/environment/src/index.ts"
+      ],
+      "@fantasy-football-sleepers/material": ["libs/material/src/index.ts"],
+      "@fantasy-football-sleepers/ui-login": ["libs/ui-login/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
