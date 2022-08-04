@@ -1,1 +1,33 @@
-<p>sleepers-list works!</p>
+<div class="sleepers-containers">
+  <div class="sleepers-list">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title> Sleeper List </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item
+            *ngFor="let sleeper of sleepers"
+            (click)="selected.emit(sleeper)"
+            class="mat-list-item"
+          >
+            <h3 matLine>{{ sleeper.name | titlecase }}</h3>
+            <p matLine>Position: {{ sleeper.position }}</p>
+            <p matLine>ADP: {{ sleeper.adp }}</p>
+
+            <p matLine>Comments: {{ sleeper.comments }}</p>
+            <button
+              mat-icon-button
+              color="warn"
+              (click)="
+                deleted.emit(sleeper.id); $event.stopImmediatePropagation()
+              "
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

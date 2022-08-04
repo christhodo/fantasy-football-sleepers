@@ -1,0 +1,18 @@
+{
+  "sleepers": [
+    {
+      "id": "1",
+      "name": "Trevor Lawrence",
+      "position": "QB",
+      "adp": "153",
+      "comments": "Going well below estimated draft value for QB's with his upside"
+    },
+    {
+      "id": "2",
+      "name": "AJ Dillon",
+      "position": "RB",
+      "adp": "50",
+      "comments": "average draft position of 50 overall"
+    }
+  ]
+}

@@ -1,1 +1,17 @@
-<p>sleepers works!</p>
+<div class="sleepers-containers">
+  <div class="sleepers-list">
+    <fantasy-football-sleepers-sleepers-list
+      [sleepers]="sleepers$ | async"
+      (selected)="selectSleeper($event)"
+      (deleted)="deleteSleeper($event)"
+    >
+    </fantasy-football-sleepers-sleepers-list>
+    <div class="sleeper-details">
+      <fantasy-football-sleepers-sleeper-details
+        [sleeper]="selectedSleeper"
+        (cancelled)="reset()"
+        (saved)="saveSleeper($event)"
+      ></fantasy-football-sleepers-sleeper-details>
+    </div>
+  </div>
+</div>

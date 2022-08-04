@@ -1,7 +1,20 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { SleeperEnvironment } from './sleepers.model';
+import { SLEEPER_ENVIRONMENT } from './sleepers.token';
 
-@NgModule({
-  imports: [CommonModule],
-})
-export class EnvironmentModule {}
+@NgModule({})
+export class EnvironmentModule {
+  static withEnvironment(
+    environment: SleeperEnvironment
+  ): ModuleWithProviders<EnvironmentModule> {
+    return {
+      ngModule: EnvironmentModule,
+      providers: [
+        {
+          provide: SLEEPER_ENVIRONMENT,
+          useValue: environment,
+        },
+      ],
+    };
+  }
+}

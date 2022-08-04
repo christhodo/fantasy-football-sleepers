@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'fantasy-football-sleepers-login',
@@ -6,7 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  form: FormGroup;
 
-  ngOnInit(): void {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
+
+  ngOnInit(): void {
+    this.initForm();
+  }
+
+  login() {
+    if (this.form.invalid) return;
+    this.router.navigate(['/drinks']);
+  }
+
+  private initForm() {
+    this.form = this.formBuilder.group({
+      username: [''],
+      password: [''],
+    });
+  }
 }
