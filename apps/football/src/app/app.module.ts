@@ -14,6 +14,7 @@ import { UiLoginModule } from '@fantasy-football-sleepers/ui-login';
 import { RoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { EnvironmentModule } from '@fantasy-football-sleepers/environment';
+import { ProtectedComponent } from './protected/protected.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { EnvironmentModule } from '@fantasy-football-sleepers/environment';
     SleepersComponent,
     SleepersListComponent,
     SleeperDetailsComponent,
+    ProtectedComponent,
   ],
   imports: [
     BrowserModule,
