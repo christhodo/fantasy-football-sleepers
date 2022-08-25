@@ -6,6 +6,11 @@ export interface Sleeper {
   comments: string;
 }
 
+export interface User {
+  email: string;
+  password: string;
+}
+
 export const emptySleeper = {
   id: '',
   name: '',
