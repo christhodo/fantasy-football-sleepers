@@ -1,0 +1,87 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/football/src",
+  "prefix": "fantasy-football-sleepers",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/football",
+        "index": "apps/football/src/index.html",
+        "main": "apps/football/src/main.ts",
+        "polyfills": "apps/football/src/polyfills.ts",
+        "tsConfig": "apps/football/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/football/src/favicon.ico", "apps/football/src/assets"],
+        "styles": ["apps/football/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/football/src/environments/environment.ts",
+              "with": "apps/football/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "football:build:production"
+        },
+        "development": {
+          "browserTarget": "football:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "football:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/football/**/*.ts", "apps/football/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/football"],
+      "options": {
+        "jestConfig": "apps/football/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
