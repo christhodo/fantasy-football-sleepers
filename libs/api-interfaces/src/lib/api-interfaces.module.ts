@@ -1,7 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+export interface Sleeper {
+  id: string;
+  name: string;
+  position: string;
+  adp: string;
+  comments: string;
+}
 
-@NgModule({
-  imports: [CommonModule],
-})
-export class ApiInterfacesModule {}
+export const emptySleeper = {
+  id: '',
+  name: '',
+  position: '',
+  adp: '',
+  comments: '',
+};
